@@ -15,7 +15,7 @@ public class result extends Activity {
 
         setContentView(R.layout.result);
         tv = (TextView)findViewById(R.id.result);
-        tv.setText("your final result is "+quiz.correct+"/"+quiz.questions.length);
+        tv.setText("your final result is " );
 
 
 
