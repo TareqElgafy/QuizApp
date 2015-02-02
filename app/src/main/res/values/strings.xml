@@ -4,5 +4,14 @@
     <string name="app_name">QuizApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_ddd">ddd</string>
+    <string name="title_activity_takequiz">takequiz</string>
+    <string name="title_activity_makequiz">makequiz</string>
+
+    <string-array name="RightAnswer">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
 </resources>

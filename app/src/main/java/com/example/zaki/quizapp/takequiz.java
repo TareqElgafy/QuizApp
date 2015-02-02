@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -58,11 +59,11 @@ public class takequiz extends Activity {
         r2 = (RadioButton) findViewById(R.id.r2);
         r3 = (RadioButton) findViewById(R.id.r3);
 
-        new GetContacts().execute();
+        new GetQuestions().execute();
 
     }
 
-    private class GetContacts extends AsyncTask<Void, Void, Void> {
+    private class GetQuestions extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -79,6 +80,9 @@ public class takequiz extends Activity {
         protected Void doInBackground(Void... arg0) {
             // Creating service handler class instance
             ServiceHandler sh = new ServiceHandler();
+
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+
 
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
