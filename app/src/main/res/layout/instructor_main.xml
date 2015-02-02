@@ -5,7 +5,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Quizs"
+        android:text="Quizzes"
         android:id="@+id/quizbt"
         android:height="100dp"
         android:width="150dp"
