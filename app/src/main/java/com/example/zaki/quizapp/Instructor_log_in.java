@@ -1,11 +1,13 @@
 package com.example.zaki.quizapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -19,10 +21,10 @@ import java.util.List;
 public class Instructor_log_in extends Activity {
 
     List<NameValuePair> params = new ArrayList<NameValuePair>();
-    private static String url = "http://10.0.2.2:8000/users/login";
-    //192.168.43.1
-    Button login_bt;
+    private static String url = "http://10.0.2.2:8000/login";
 
+    Button login_bt;
+    EditText username, password;
 
 
     @Override
@@ -32,15 +34,16 @@ public class Instructor_log_in extends Activity {
         setContentView(R.layout.instructor_log_in);
 
         login_bt = (Button) findViewById(R.id.instrlog);
-        Log.d("button: ", login_bt.toString());
+        username = (EditText) findViewById(R.id.instr_user_name_text);
+        password = (EditText) findViewById(R.id.instr_pass_text);
+
+
         login_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                params.add(new BasicNameValuePair("username", "amr"));
-                params.add(new BasicNameValuePair("password", "123"));
-
-
+                params.add(new BasicNameValuePair("username", username.getText().toString()));
+                params.add(new BasicNameValuePair("password", password.getText().toString()));
                 new login_method().execute();
             }
         });
@@ -48,6 +51,7 @@ public class Instructor_log_in extends Activity {
 
 
     private class login_method extends AsyncTask<Void, Void, Void> {
+        String jsonStr;
 
         @Override
         protected void onPreExecute() {
@@ -60,13 +64,13 @@ public class Instructor_log_in extends Activity {
             ServiceHandler sh = new ServiceHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST, params);
+            jsonStr = sh.makeServiceCall(url, ServiceHandler.POST, params);
 
             Log.d("Response: ", "> " + jsonStr);
 
-            //  Log.d("myTrial: ", "> " + params);
-
-
+            // Log.d("myTrial: ", params.toString());
+            //  String test = sh.makeServiceCall("http://10.0.2.2:8000/logout", ServiceHandler.POST, new ArrayList<NameValuePair>(){});
+            //Log.d("Response: ", test);
             return null;
         }
 
@@ -74,6 +78,11 @@ public class Instructor_log_in extends Activity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
+            if (jsonStr.contains("Success")) {
+                Intent intent = new Intent(Instructor_log_in.this, instructor_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
+
+                startActivity(intent);
+            }
         }
 
 

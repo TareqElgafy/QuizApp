@@ -46,19 +46,21 @@ public class ServiceHandler {
 
     /**
      * Making service call
+     *
      * @url - url to make request
      * @method - http request method
-     * */
+     */
     public String makeServiceCall(String url, int method) {
         return this.makeServiceCall(url, method, null);
     }
 
     /**
      * Making service call
+     *
      * @url - url to make request
      * @method - http request method
      * @params - http request params
-     * */
+     */
     public String makeServiceCall(String url, int method,
                                   List<NameValuePair> params) {
         try {
@@ -90,9 +92,9 @@ public class ServiceHandler {
 
                 httpResponse = httpClient.execute(httpGet, localContext);
                 List<Cookie> cookies = cookieStore.getCookies();
-                for (int i = 0; i < cookies.size(); i++) {
-                    Log.d("LOCAL COOKIES: ", "" + cookies.get(i));
-                }
+                //   for (int i = 0; i < cookies.size(); i++) {
+                //      Log.d("LOCAL COOKIES: ", "" + cookies.get(i));
+                //  }
 
 
             }
