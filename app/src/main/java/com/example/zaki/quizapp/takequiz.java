@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class takequiz extends Activity {
     private ProgressDialog pDialog;
     private static String url = "http://myquizapp.net63.net/download";
     JSONArray questions = null;
-   public  List<singleQuestion > quiz = new ArrayList<singleQuestion>();
+    public List<singleQuestion> quiz = new ArrayList<singleQuestion>();
 
 
     Button bt;
@@ -43,7 +44,6 @@ public class takequiz extends Activity {
     RadioButton r1, r2, r3;
     public static int correct;
     int position = 0;
-
 
 
     @Override
@@ -96,7 +96,7 @@ public class takequiz extends Activity {
                     // Getting JSON Array node
                     questions = jsonObj.getJSONArray(TAG_QUESTIONS);
 
-                    // looping through All Contacts
+                    // looping through All questions
                     for (int i = 0; i < questions.length(); i++) {
                         JSONObject c = questions.getJSONObject(i);
 
@@ -122,7 +122,7 @@ public class takequiz extends Activity {
 
                         // adding contact to contact list
 
-                        //     contactList.add(contact);
+                        //     contactList.add(question);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -137,7 +137,7 @@ public class takequiz extends Activity {
                 public void run() {
 
                     tv.setText(quiz.get(position).question);
-                    r1.setText( quiz.get(position).opts[0]);
+                    r1.setText(quiz.get(position).opts[0]);
                     r2.setText(quiz.get(position).opts[1]);
                     r3.setText(quiz.get(position).opts[2]);
 
@@ -158,14 +158,14 @@ public class takequiz extends Activity {
                             if (position < quiz.size()) {
 
                                 tv.setText(quiz.get(position).question);
-                                r1.setText( quiz.get(position).opts[0]);
+                                r1.setText(quiz.get(position).opts[0]);
                                 r2.setText(quiz.get(position).opts[1]);
                                 r3.setText(quiz.get(position).opts[2]);
 
                             } else {
 
-                                Intent in = new Intent(getApplicationContext(),result.class);
-                                 startActivity(in);
+                                Intent in = new Intent(getApplicationContext(), result.class);
+                                startActivity(in);
 
                             }
 

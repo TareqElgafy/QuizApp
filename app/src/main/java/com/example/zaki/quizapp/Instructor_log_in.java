@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -33,11 +34,11 @@ public class Instructor_log_in extends Activity {
 
         setContentView(R.layout.instructor_log_in);
 
-        login_bt = (Button) findViewById(R.id.instrlog);
+        login_bt = (Button) findViewById(R.id.studentlogbt);
         username = (EditText) findViewById(R.id.instr_user_name_text);
         password = (EditText) findViewById(R.id.instr_pass_text);
 
-
+        username.setFocusable(true);
         login_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +83,12 @@ public class Instructor_log_in extends Activity {
                 Intent intent = new Intent(Instructor_log_in.this, instructor_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
 
                 startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "wrong userName or password try again",
+                        Toast.LENGTH_LONG).show();
+                username.setText("");
+                password.setText("");
+                username.setFocusable(true);
             }
         }
 

@@ -30,10 +30,10 @@ import java.util.List;
 public class makequiz extends Activity {
 
     TextView Quizname;
-    EditText questionEntered , op1Entered,op2Entered,op3Entered;
+    EditText questionEntered, op1Entered, op2Entered, op3Entered;
     Spinner choices;
-    Button nextQuestion , submitQuestions;
-    public List<singleQuestion > quiz = new ArrayList<singleQuestion>();
+    Button nextQuestion, submitQuestions;
+    public List<singleQuestion> quiz = new ArrayList<singleQuestion>();
     private ProgressDialog pDialog;
     JSONObject Parent = new JSONObject();
     List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -41,15 +41,12 @@ public class makequiz extends Activity {
     private static String url = "http://services.hanselandpetal.com/restful.php";
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.makequiz);
 
-        Quizname= (TextView) findViewById(R.id.quizname);
+        Quizname = (TextView) findViewById(R.id.quizname);
         Quizname.setText(create_new_quiz.QuizName);
 
         questionEntered = (EditText) findViewById(R.id.questionEntered);
@@ -57,8 +54,8 @@ public class makequiz extends Activity {
         op2Entered = (EditText) findViewById(R.id.op2Entered);
         op3Entered = (EditText) findViewById(R.id.op3Entered);
         choices = (Spinner) findViewById(R.id.ops);
-        nextQuestion= (Button) findViewById(R.id.nextQuestion);
-        submitQuestions= (Button) findViewById(R.id.submitQuestions);
+        nextQuestion = (Button) findViewById(R.id.nextQuestion);
+        submitQuestions = (Button) findViewById(R.id.submitQuestions);
 
         nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,16 +68,16 @@ public class makequiz extends Activity {
                 sQ.opts[2] = op3Entered.getText().toString();
 
 
-                String selectedans= choices.getSelectedItem().toString();
-                switch (selectedans){
+                String selectedans = choices.getSelectedItem().toString();
+                switch (selectedans) {
                     case "1":
-                        sQ.answer =  sQ.opts[0];
+                        sQ.answer = sQ.opts[0];
                         break;
                     case "2":
-                        sQ.answer =  sQ.opts[1];
+                        sQ.answer = sQ.opts[1];
                         break;
                     case "3":
-                        sQ.answer =  sQ.opts[2];
+                        sQ.answer = sQ.opts[2];
                         break;
                 }
 
@@ -90,7 +87,7 @@ public class makequiz extends Activity {
                 op1Entered.setText("");
                 op2Entered.setText("");
                 op3Entered.setText("");
-
+                questionEntered.setFocusable(true);
 
 
             }
@@ -98,24 +95,23 @@ public class makequiz extends Activity {
 
         submitQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
-         public void onClick(View v) {
+            public void onClick(View v) {
 
                 JSONArray questionsArray = new JSONArray();
 
-                for (int i = 0 ; i < quiz.size() ; i++)
-                {
+                for (int i = 0; i < quiz.size(); i++) {
                     JSONObject jsonObj = new JSONObject();
                     try {
                         jsonObj.put("question", quiz.get(i).question);
 
-                    jsonObj.put("answer", quiz.get(i).answer);
+                        jsonObj.put("answer", quiz.get(i).answer);
 
-                    JSONObject jsonOptsObj = new JSONObject();
-                    jsonOptsObj.put("op1", quiz.get(i).opts[0]);
-                    jsonOptsObj.put("op2", quiz.get(i).opts[1]);
-                    jsonOptsObj.put("op3", quiz.get(i).opts[2]);
+                        JSONObject jsonOptsObj = new JSONObject();
+                        jsonOptsObj.put("op1", quiz.get(i).opts[0]);
+                        jsonOptsObj.put("op2", quiz.get(i).opts[1]);
+                        jsonOptsObj.put("op3", quiz.get(i).opts[2]);
 
-                    jsonObj.put("options",jsonOptsObj);
+                        jsonObj.put("options", jsonOptsObj);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -123,18 +119,18 @@ public class makequiz extends Activity {
                     questionsArray.put(jsonObj);
                 }
 
-                 params.add(new BasicNameValuePair("questions", questionsArray.toString() ));
+                params.add(new BasicNameValuePair("questions", questionsArray.toString()));//??
 
                 Log.d("Value: ", "> " + params);
 
                 new AddQuestions().execute();
 
-                Toast.makeText(getApplicationContext(),"The Quiz has been added successfully" ,
+                Toast.makeText(getApplicationContext(), "The Quiz has been added successfully",
                         Toast.LENGTH_LONG).show();
 
 
             }
-});
+        });
 
 
     }
@@ -158,11 +154,11 @@ public class makequiz extends Activity {
             ServiceHandler sh = new ServiceHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST,params);
+            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST, params);
 
             Log.d("Response: ", "> " + jsonStr);
 
-          //  Log.d("myTrial: ", "> " + params);
+            //  Log.d("myTrial: ", "> " + params);
 
 
             return null;
@@ -182,8 +178,6 @@ public class makequiz extends Activity {
 
 
     }
-
-
 
 
 }

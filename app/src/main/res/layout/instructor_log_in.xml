@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,11 +22,12 @@
         android:text="Enter your username"
         android:id="@+id/textView2"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/studentlogbt"
         android:layout_toStartOf="@+id/studentlogbt"
         android:layout_marginTop="36dp"
 
-        />
+        android:width="200dp"
+        android:layout_alignRight="@+id/studentlogbt"
+        android:layout_alignEnd="@+id/studentlogbt" />
 
 
     <TextView
@@ -42,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log in"
-        android:id="@+id/instrlog"
+        android:id="@+id/studentlogbt"
         android:layout_marginTop="90dp"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
@@ -66,6 +68,6 @@
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:nextFocusDown="@+id/editText3" />
+        android:nextFocusDown="@+id/instr_pass_text" />
 
 </RelativeLayout>

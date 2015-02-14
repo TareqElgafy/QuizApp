@@ -14,4 +14,10 @@
         <item>3</item>
     </string-array>
 
+    <string name="title_activity_create_new_group">CreateNewGroup</string>
+    <string name="title_activity_view_instuctour_groups">viewInstuctourGroups</string>
+    <string name="title_activity_view_qizes">viewQizes</string>
+    <string name="title_activity_view_groups">ViewGroups</string>
+    <string name="title_activity_active_qizies">ActiveQizies</string>
+
 </resources>

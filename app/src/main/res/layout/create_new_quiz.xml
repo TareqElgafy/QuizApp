@@ -23,10 +23,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Name:"
         android:id="@+id/textView5"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="85dp"
         android:layout_below="@+id/textView4"
-        android:layout_toLeftOf="@+id/QuizNameEdit"
-        android:layout_toStartOf="@+id/QuizNameEdit" />
+        android:layout_alignLeft="@+id/GoropTV"
+        android:layout_alignStart="@+id/GoropTV" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -41,22 +41,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Time:"
+        android:text="available duration"
         android:id="@+id/textView6"
-        android:layout_marginTop="114dp"
-        android:layout_below="@+id/textView5"
-        android:layout_toLeftOf="@+id/QuizNameEdit"
-        android:layout_toStartOf="@+id/QuizNameEdit" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/QuizTimeEdit"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/QuizNameEdit"
-        android:layout_alignStart="@+id/QuizNameEdit" />
+        android:layout_below="@+id/DurationTv"
+        android:layout_toStartOf="@+id/txtDateFrom"
+        android:layout_marginTop="41dp"
+        android:layout_toLeftOf="@+id/txtDateFrom" />
 
     <Button
         android:layout_width="wrap_content"
@@ -65,7 +55,93 @@
         android:id="@+id/Sumbitnewquiz"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Duration:"
+        android:id="@+id/DurationTv"
+        android:layout_alignBottom="@+id/txtTestDuration"
+        android:layout_toLeftOf="@+id/GroupListBox"
+        android:layout_toStartOf="@+id/GroupListBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Group:"
+        android:id="@+id/GoropTV"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/DurationTv"
+        android:layout_alignStart="@+id/DurationTv"
+        android:layout_marginTop="36dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/GroupListBox"
+        android:layout_gravity="center_horizontal"
+        android:entries="@array/RightAnswer"
+        android:layout_alignTop="@+id/GoropTV"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/QuizNameEdit"
+        android:layout_alignStart="@+id/QuizNameEdit"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtTestDuration"
+        android:layout_below="@+id/GroupListBox"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="from:"
+        android:id="@+id/fromTV"
+        android:layout_below="@+id/textView6"
+        android:layout_alignLeft="@+id/ToTV"
+        android:layout_alignStart="@+id/ToTV"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="To:"
+        android:id="@+id/ToTV"
+        android:layout_below="@+id/fromTV"
+        android:layout_toRightOf="@+id/GoropTV"
+        android:layout_toEndOf="@+id/GoropTV"
+        android:layout_marginTop="35dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtDateFrom"
+        android:layout_above="@+id/ToTV"
+        android:layout_alignLeft="@+id/Sumbitnewquiz"
+        android:layout_alignStart="@+id/Sumbitnewquiz" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TxtDateTo"
+        android:layout_above="@+id/Sumbitnewquiz"
+        android:layout_alignLeft="@+id/Sumbitnewquiz"
+        android:layout_alignStart="@+id/Sumbitnewquiz" />
+
 
 </RelativeLayout>
