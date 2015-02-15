@@ -25,14 +25,14 @@ import java.util.List;
  */
 public class create_new_quiz extends Activity {
 
+    public static String QuizName, testDuration, DateFrom, DateTo;
+    private static String url = "http://services.hanselandpetal.com/restful.php";
+    public List<NameValuePair> params = new ArrayList<NameValuePair>();
+    public ProgressDialog pDialog;
     Button Sumbitnewquiz;
     EditText name, txtTestDuration, txtDateFrom, TxtDateTo;
     Spinner Groups;
-    public static String QuizName, testDuration, DateFrom, DateTo;
     JSONObject Parent = new JSONObject();
-    public List<NameValuePair> params = new ArrayList<NameValuePair>();
-    public ProgressDialog pDialog;
-    private static String url = "http://services.hanselandpetal.com/restful.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

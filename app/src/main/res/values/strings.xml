@@ -20,5 +20,7 @@
     <string name="title_activity_view_groups">ViewGroups</string>
     <string name="title_activity_active_qizies">ActiveQizies</string>
     <string name="title_activity_creat_new_user">Creat_new_user</string>
+    <string name="title_activity_stuent_profile">Stuent_profile</string>
+
 
 </resources>

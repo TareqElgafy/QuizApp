@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
 
-                Intent Iin = new Intent(getApplicationContext(), Instructor_log_in.class);
+                Intent Iin = new Intent(getApplicationContext(), Global_log_in.class);
                 startActivity(Iin);
 
 

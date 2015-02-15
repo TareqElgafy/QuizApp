@@ -1,13 +1,9 @@
 package com.example.zaki.quizapp;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -87,6 +83,9 @@ public class Create_new_user extends Activity {
             super.onPostExecute(result);
 
             Toast.makeText(getApplicationContext(), "succesfully created" + jsonStr, Toast.LENGTH_LONG).show();
+            username.setText("");
+            password.setText("");
+            confirm.setText("");
         }
 
 

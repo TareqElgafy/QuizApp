@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,20 +30,16 @@ public class takequiz extends Activity {
     private static final String TAG_OPTS_OP1 = "op1";
     private static final String TAG_OPTS_OP2 = "op2";
     private static final String TAG_OPTS_OP3 = "op3";
-
-    private ProgressDialog pDialog;
+    public static int correct;
     private static String url = "http://myquizapp.net63.net/download";
-    JSONArray questions = null;
     public List<singleQuestion> quiz = new ArrayList<singleQuestion>();
-
-
+    JSONArray questions = null;
     Button bt;
     TextView tv;
     RadioGroup rg;
     RadioButton r1, r2, r3;
-    public static int correct;
     int position = 0;
-
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

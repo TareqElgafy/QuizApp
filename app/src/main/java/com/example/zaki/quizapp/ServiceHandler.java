@@ -4,12 +4,6 @@ package com.example.zaki.quizapp;
  * Created by Zaki on 1/31/2015.
  */
 
-import android.util.Log;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -27,17 +21,19 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
 public class ServiceHandler {
 
-    static String response = null;
     public final static int GET = 1;
     public final static int POST = 2;
-// Create a local instance of cookie store
-
     public static CookieStore cookieStore = new BasicCookieStore();
+    // Create a local instance of cookie store
+    static String response = null;
 
-// Create local HTTP context
-
+    // Create local HTTP context
     static HttpContext localContext = new BasicHttpContext();
 
     public ServiceHandler() {

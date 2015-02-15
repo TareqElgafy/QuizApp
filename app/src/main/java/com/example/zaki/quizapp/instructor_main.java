@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import org.apache.http.message.BasicNameValuePair;
-
 /**
  * Created by Zaki on 2/2/2015.
  */

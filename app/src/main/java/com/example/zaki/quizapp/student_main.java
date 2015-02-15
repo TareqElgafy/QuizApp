@@ -15,7 +15,5 @@ public class student_main extends Activity {
         setContentView(R.layout.student_main);
 
 
-
-
     }
 }

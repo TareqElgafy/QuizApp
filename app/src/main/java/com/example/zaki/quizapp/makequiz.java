@@ -2,17 +2,12 @@ package com.example.zaki.quizapp;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,17 +24,15 @@ import java.util.List;
 
 public class makequiz extends Activity {
 
+    private static String url = "http://services.hanselandpetal.com/restful.php";
+    public List<singleQuestion> quiz = new ArrayList<singleQuestion>();
     TextView Quizname;
     EditText questionEntered, op1Entered, op2Entered, op3Entered;
     Spinner choices;
     Button nextQuestion, submitQuestions;
-    public List<singleQuestion> quiz = new ArrayList<singleQuestion>();
-    private ProgressDialog pDialog;
     JSONObject Parent = new JSONObject();
     List<NameValuePair> params = new ArrayList<NameValuePair>();
-
-    private static String url = "http://services.hanselandpetal.com/restful.php";
-
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

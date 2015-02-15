@@ -10,13 +10,13 @@ import android.widget.TextView;
 public class result extends Activity {
 
     TextView tv;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.result);
-        tv = (TextView)findViewById(R.id.result);
-        tv.setText("your final result is " );
-
+        tv = (TextView) findViewById(R.id.result);
+        tv.setText("your final result is ");
 
 
     }

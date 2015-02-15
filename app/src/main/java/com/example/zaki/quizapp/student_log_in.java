@@ -24,14 +24,14 @@ import java.util.List;
 /**
  * Created by Zaki on 1/30/2015.
  */
-public class student_log_in extends Activity  {
+public class student_log_in extends Activity {
 
-    private EditText studentid, studentpass;
-    private Button login;
-
-    // Progress Dialog
-    private ProgressDialog pDialog;
-
+    //testing on Emulator:
+    //  private static final String LOGIN_URL = "http://192.168.0.3/MyAndroidPhp/login.php";
+    private static final String LOGIN_URL = "http://myquizapp.net63.net/login.php";
+    //JSON element ids from repsonse of php script:
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_MESSAGE = "message";
     // JSON parser class
     JSONParser jsonParser = new JSONParser();
 
@@ -42,18 +42,14 @@ public class student_log_in extends Activity  {
     //put your local ip instead,  on windows, run CMD > ipconfig
     //or in mac's terminal type ifconfig and look for the ip under en0 or en1
     // private static final String LOGIN_URL = "http://xxx.xxx.x.x:1234/webservice/login.php";
-
-    //testing on Emulator:
-    //  private static final String LOGIN_URL = "http://192.168.0.3/MyAndroidPhp/login.php";
-    private static final String LOGIN_URL = "http://myquizapp.net63.net/login.php";
+    private EditText studentid, studentpass;
 
 
     //testing from a real server:
     //private static final String LOGIN_URL = "http://www.000webhost.com.com/webservice/login.php";
-
-    //JSON element ids from repsonse of php script:
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
+    private Button login;
+    // Progress Dialog
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +75,7 @@ public class student_log_in extends Activity  {
 
         /**
          * Before starting background thread Show Progress Dialog
-         * */
+         */
         boolean failure = false;
 
         @Override
@@ -125,7 +121,7 @@ public class student_log_in extends Activity  {
                     Intent i = new Intent(student_log_in.this, student_main.class);
                     startActivity(i);
                     return json.getString(TAG_MESSAGE);
-                }else{
+                } else {
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));
                     return json.getString(TAG_MESSAGE);
 
@@ -137,13 +133,15 @@ public class student_log_in extends Activity  {
             return null;
 
         }
+
         /**
          * After completing background task Dismiss the progress dialog
-         * **/
+         * *
+         */
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once product deleted
             pDialog.dismiss();
-            if (file_url != null){
+            if (file_url != null) {
                 Toast.makeText(student_log_in.this, file_url, Toast.LENGTH_LONG).show();
             }
 

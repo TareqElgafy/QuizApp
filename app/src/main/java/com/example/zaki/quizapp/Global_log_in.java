@@ -19,11 +19,10 @@ import java.util.List;
 /**
  * Created by Zaki on 1/30/2015.
  */
-public class Instructor_log_in extends Activity {
+public class Global_log_in extends Activity {
 
-    List<NameValuePair> params = new ArrayList<NameValuePair>();
     private static String url = "http://10.0.2.2:8000/login";
-
+    List<NameValuePair> params = new ArrayList<NameValuePair>();
     Button login_bt;
     EditText username, password;
 
@@ -32,7 +31,7 @@ public class Instructor_log_in extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.instructor_log_in);
+        setContentView(R.layout.globallogin);
 
         login_bt = (Button) findViewById(R.id.studentlogbt);
         username = (EditText) findViewById(R.id.instr_user_name_text);
@@ -80,12 +79,11 @@ public class Instructor_log_in extends Activity {
             super.onPostExecute(result);
 
             if (jsonStr.contains("Success Instructor")) {
-                Intent intent = new Intent(Instructor_log_in.this, instructor_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
+                Intent intent = new Intent(Global_log_in.this, instructor_main.class);
 
                 startActivity(intent);
             } else if (jsonStr.contains("Success Student")) {
-                Intent intent = new Intent(Instructor_log_in.this, student_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
-
+                Intent intent = new Intent(Global_log_in.this, student_main.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "wrong userName or password try again",
