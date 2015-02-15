@@ -14,6 +14,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -68,7 +69,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
-                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -111,19 +111,22 @@
         </activity>
         <activity
             android:name=".CreateNewGroup"
-            android:label="@string/title_activity_create_new_group"></activity>
+            android:label="@string/title_activity_create_new_group" />
         <activity
             android:name=".viewInstuctourGroups"
-            android:label="@string/title_activity_view_instuctour_groups"></activity>
+            android:label="@string/title_activity_view_instuctour_groups" />
         <activity
             android:name=".viewQizes"
-            android:label="@string/title_activity_view_qizes"></activity>
+            android:label="@string/title_activity_view_qizes" />
         <activity
             android:name=".ViewGroups"
-            android:label="@string/title_activity_view_groups"></activity>
+            android:label="@string/title_activity_view_groups" />
         <activity
             android:name=".ActiveQizies"
-            android:label="@string/title_activity_active_qizies"></activity>
+            android:label="@string/title_activity_active_qizies" />
+        <activity
+            android:name=".Create_new_user"
+            android:label="@string/title_activity_creat_new_user"></activity>
     </application>
 
 </manifest>

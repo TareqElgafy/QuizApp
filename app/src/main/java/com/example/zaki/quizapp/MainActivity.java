@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    Button Ibt, Sbt;
+    Button LoginBtn, SignUpBtn;
 
 
     @Override
@@ -17,18 +17,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Ibt = (Button) findViewById(R.id.Instructor);
-        Sbt = (Button) findViewById(R.id.ViewPublishedQuizzesBtn);
-        Sbt.setOnClickListener(new View.OnClickListener() {
+        LoginBtn = (Button) findViewById(R.id.LoginBtn);
+        SignUpBtn = (Button) findViewById(R.id.SignUpBtn);
+        SignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent Sin = new Intent(getApplicationContext(), student_log_in.class);
+                Intent Sin = new Intent(getApplicationContext(), Create_new_user.class);
                 startActivity(Sin);
             }
         });
 
-        Ibt.setOnClickListener(new View.OnClickListener() {
+        LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

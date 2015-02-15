@@ -20,7 +20,7 @@ public class instructor_quizzes_main extends Activity {
         setContentView(R.layout.instructor_quizzes_main);
 
         creatNewQuizBtn = (Button) findViewById(R.id.creatNewQuizBtn);
-        ViewPublishedQuizzesBtn = (Button) findViewById(R.id.ViewPublishedQuizzesBtn);
+        ViewPublishedQuizzesBtn = (Button) findViewById(R.id.SignUpBtn);
         ViewUnpublishedQuizzesBtn = (Button) findViewById(R.id.ViewUnpublishedQuizzesBtn);
 
         creatNewQuizBtn.setOnClickListener(new View.OnClickListener() {

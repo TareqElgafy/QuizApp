@@ -79,8 +79,12 @@ public class Instructor_log_in extends Activity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            if (jsonStr.contains("Success")) {
+            if (jsonStr.contains("Success Instructor")) {
                 Intent intent = new Intent(Instructor_log_in.this, instructor_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
+
+                startActivity(intent);
+            } else if (jsonStr.contains("Success Student")) {
+                Intent intent = new Intent(Instructor_log_in.this, student_main.class); //MainActivity is the name of current activity and HomeActivity is the name of the activity you want to start
 
                 startActivity(intent);
             } else {

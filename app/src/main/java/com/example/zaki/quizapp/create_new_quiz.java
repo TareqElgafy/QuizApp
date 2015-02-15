@@ -42,8 +42,7 @@ public class create_new_quiz extends Activity {
 
         name = (EditText) findViewById(R.id.QuizNameEdit);
         txtTestDuration = (EditText) findViewById(R.id.txtTestDuration);
-        txtDateFrom = (EditText) findViewById(R.id.txtDateFrom);
-        TxtDateTo = (EditText) findViewById(R.id.TxtDateTo);
+
         Groups = (Spinner) findViewById(R.id.GroupListBox);
 
         Sumbitnewquiz = (Button) findViewById(R.id.Sumbitnewquiz);

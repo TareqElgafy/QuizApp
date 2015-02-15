@@ -19,5 +19,6 @@
     <string name="title_activity_view_qizes">viewQizes</string>
     <string name="title_activity_view_groups">ViewGroups</string>
     <string name="title_activity_active_qizies">ActiveQizies</string>
+    <string name="title_activity_creat_new_user">Creat_new_user</string>
 
 </resources>
